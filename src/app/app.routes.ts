@@ -24,5 +24,9 @@ export const routes: Routes = [
     {
         path: 'controlpanel',
         component: ControlPanel
+    },
+    {
+        path: '**',
+        component: ControlPanel
     }
 ];

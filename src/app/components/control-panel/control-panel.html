@@ -1,13 +1,16 @@
 <h1>Kontrol Paneli</h1>
 <div class="container">
     <div class="link">
-        <a routerLink="/leaderboard" target="_blank">Leaderboard</a>
+        <a href="https://github.com/makifgokce/obs-scoreboard/releases" target="_blank">Download Server Release</a>
     </div>
     <div class="link">
-        <a routerLink="/counter" target="_blank">Counter</a>
+        <a routerLink="/leaderboard" target="_blank">Puan Tablosu</a>
     </div>
     <div class="link">
-        <a routerLink="/teamscore" target="_blank">TeamScore</a>
+        <a routerLink="/counter" target="_blank">Sayaç</a>
+    </div>
+    <div class="link">
+        <a routerLink="/teamscore" target="_blank">Takım Skorları</a>
     </div>
 </div>
 <div class="control-panel">
@@ -16,7 +19,7 @@
         <div class="tab-buttons">
             <button class="tab-button" [class.active]="activeTab == 'team-scores'" (click)="selectTab('team-scores')">Takım Skorları</button>
             <button class="tab-button" [class.active]="activeTab == 'counter'" (click)="selectTab('counter')">Sayaç</button>
-            <button class="tab-button" [class.active]="activeTab == 'leaderboard'" (click)="selectTab('leaderboard')">Lider Tablosu</button>
+            <button class="tab-button" [class.active]="activeTab == 'leaderboard'" (click)="selectTab('leaderboard')">Puan Tablosu</button>
         </div>
         
         <div id="team-scores" class="tab-content" [class.active]="activeTab == 'team-scores'">
