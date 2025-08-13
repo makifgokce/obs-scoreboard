@@ -1,0 +1,94 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* Genel Stiller */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Sayaç Stilleri */
+.counter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    height: 80vh;
+}
+
+.counter-label {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+}
+
+.counter-value {
+    font-size: 8em;
+    font-weight: bold;
+    color: #4CAF50;
+    text-shadow: 0 0 15px rgba(76, 175, 80, 0.7);
+}
+@media screen and (width < 1000px) {
+    .container {
+        max-width: 800px;
+    }
+    .counter-container {
+        padding: 8px;
+    }
+}
+@media screen and (width < 700px) {
+    .container {
+        max-width: 400px;
+    }
+    .counter-container {
+        padding: 6px;
+    }
+}
+@media screen and (width < 400px) {
+    .container {
+        max-width: 300px;
+    }
+    .counter-container {
+        padding: 5px;
+    }
+}
+@media screen and (width < 300px) {
+    .container {
+        max-width: 150px;
+    }
+    .counter-container {
+        padding: 3px;
+    }
+    .counter-value {
+        font-size: 4em;
+    }
+    .counter-label {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+}
+@media screen and (width < 200px) {
+    .container {
+        max-width: 100px;
+    }
+    .counter-container {
+        padding: 3px;
+    }
+    .counter-value {
+        font-size: 2em;
+    }
+    .counter-label {
+        font-size: 1em;
+        margin-bottom: 5px;
+    }
+}

@@ -1,0 +1,72 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+    margin: 0;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* Genel Stiller */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Lider Tablosu Stilleri */
+.leaderboard {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.leaderboard-title {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #f0f0f0;
+}
+
+.leaderboard-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    margin-bottom: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    font-size: 1.5em;
+}
+
+.leaderboard-entry:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.leaderboard-rank {
+    font-weight: bold;
+    color: #FFC107;
+    margin-right: 15px;
+    min-width: 30px;
+}
+
+.leaderboard-name {
+    flex-grow: 1;
+}
+
+.leaderboard-score {
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+@media screen and (width < 400px) {
+    .leaderboard {
+        padding: 3px;
+    }
+    .leaderboard-title {
+        font-size: 1em;
+    }
+    .leaderboard-entry {
+        font-size: 1em;
+    }
+}

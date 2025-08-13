@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36401.2
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScoreboardServer", "ScoreboardServer.csproj", "{089047F4-9DDA-4CE0-890E-01938FC4E074}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{089047F4-9DDA-4CE0-890E-01938FC4E074}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{089047F4-9DDA-4CE0-890E-01938FC4E074}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{089047F4-9DDA-4CE0-890E-01938FC4E074}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{089047F4-9DDA-4CE0-890E-01938FC4E074}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E8700D7-47E3-47A7-8679-DA48A42ADB73}
+	EndGlobalSection
+EndGlobal

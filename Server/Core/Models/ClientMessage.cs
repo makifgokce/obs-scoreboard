@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.Json.Serialization;
+using System.Threading.Tasks;
+
+namespace ScoreboardServer.Core.Models
+{
+    public class ClientMessage
+    {
+        [JsonPropertyName("Action")]
+        public string Action { get; set; }
+    }
+}

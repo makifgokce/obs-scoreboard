@@ -1,0 +1,59 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* Genel Stiller */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Takım Skoru Stilleri */
+.scoreboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 20px 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.team {
+    text-align: center;
+    margin: 0 30px;
+}
+
+.team-name {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #f0f0f0;
+}
+
+.score {
+    font-size: 6em;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(76, 175, 80, 0.7);
+}
+
+.team-a .score {
+    color: #2196F3;
+    text-shadow: 0 0 10px rgba(33, 150, 243, 0.7);
+}
+
+.team-b .score {
+    color: #FF5722;
+    text-shadow: 0 0 10px rgba(255, 87, 34, 0.7);
+}
+
+.vs {
+    font-size: 2em;
+    align-self: center;
+    color: #4CAF50;
+}

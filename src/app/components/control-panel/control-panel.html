@@ -1,0 +1,100 @@
+<h1>Kontrol Paneli</h1>
+<div class="container">
+    <div class="link">
+        <a routerLink="/leaderboard" target="_blank">Leaderboard</a>
+    </div>
+    <div class="link">
+        <a routerLink="/counter" target="_blank">Counter</a>
+    </div>
+    <div class="link">
+        <a routerLink="/teamscore" target="_blank">TeamScore</a>
+    </div>
+</div>
+<div class="control-panel">
+    
+    <div class="tab-container">
+        <div class="tab-buttons">
+            <button class="tab-button" [class.active]="activeTab == 'team-scores'" (click)="selectTab('team-scores')">Takım Skorları</button>
+            <button class="tab-button" [class.active]="activeTab == 'counter'" (click)="selectTab('counter')">Sayaç</button>
+            <button class="tab-button" [class.active]="activeTab == 'leaderboard'" (click)="selectTab('leaderboard')">Lider Tablosu</button>
+        </div>
+        
+        <div id="team-scores" class="tab-content" [class.active]="activeTab == 'team-scores'">
+            <div class="team-control team-a">
+                <div class="team-name"><input id="teamA" type="text" [(ngModel)]="teamAName" (change)="updateTeamName('A')"></div>
+                <div class="score-display" id="scoreA">{{this.scoreData().TeamAScore}}</div>
+                <div class="controls">
+                    <button class="increment" (click)="updateScore('A', 1)">+1</button>
+                    <button class="decrement" (click)="updateScore('A', -1)">-1</button>
+                </div>
+            </div>
+            
+            <div class="team-control team-b">
+                <div class="team-name"><input id="teamB" type="text" [(ngModel)]="teamBName"(change)="updateTeamName('B')"></div>
+                <div class="score-display" id="scoreB">{{this.scoreData().TeamBScore}}</div>
+                <div class="controls">
+                    <button class="increment" (click)="updateScore('B', 1)">+1</button>
+                    <button class="decrement" (click)="updateScore('B', -1)">-1</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="counter" class="tab-content" [class.active]="activeTab == 'counter'">
+            <div class="counter-control">
+                <input type="text" id="counter-name" placeholder="Sayaç Adı" [(ngModel)]="counterName" (change)="counterNameUpdate()">
+                <div class="counter-value" id="counter-value">{{this.scoreData().Counter}}</div>
+                <div class="controls">
+                    <button class="increment" (click)="updateCounter(1)">+1</button>
+                    <button class="decrement" (click)="updateCounter(-1)">-1</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="leaderboard" class="tab-content" [class.active]="activeTab == 'leaderboard'">
+            <input #fileInput type="file" accept=".json"
+            style="display: none"
+            (change)="onFileSelected($event)">
+            <button class="increment" (click)="saveFile()">Dışarı Aktar</button>
+            <button class="increment" (click)="selectFile()">İçeri Aktar</button>
+            <input type="file" id="players" accept=".json" style="display: none;">
+            <div class="leaderboard-control">
+                <div id="leaderboard-entries">
+                    @for (entry of this.scoreData().Leaderboard; let i = $index; track entry.Id) {
+                    <div class="leaderboard-entry">
+                        <input type="text" [name]="'Name_{{i}}'" [(ngModel)]="entry.Name" (change)="updateEntryName(i, entry.Name)" [style.color]="entry.Color">
+                        <input type="number" [name]="'Score_{{i}}'" [(ngModel)]="entry.Score" (change)="updateEntryScore(i, entry.Score)" [style.color]="entry.Color" min="0">
+                        <input type="color" [name]="'Color_{{i}}'" [(ngModel)]="entry.Color" (change)="updateEntryColor(i, entry.Color)">
+                        <button class="decrement" (click)="changeEntryScore(-1, i)">-</button>
+                        <button class="increment" (click)="changeEntryScore(1, i)">+</button>
+                        <button class="decrement" (click)="deleteEntry(i)">Sil</button>
+                    </div>
+                    }
+                </div>
+                <div class="colors">
+                    <div class="select-color" (click)="selectColor('#5271E0')" style="background-color: #5271E0;"></div>
+                    <div class="select-color" (click)="selectColor('#ca0f0f')" style="background-color: #ca0f0f;"></div>
+                    <div class="select-color" (click)="selectColor('#dfc11b')" style="background-color: #dfc11b;"></div>
+                    <div class="select-color" (click)="selectColor('#51c50e')" style="background-color: #51c50e;"></div>
+                    <div class="select-color" (click)="selectColor('#1fe6c4')" style="background-color: #1fe6c4;"></div>
+                    <div class="select-color" (click)="selectColor('#f308d4')" style="background-color: #f308d4;"></div>
+                    <div class="select-color" (click)="selectColor('#a100b6')" style="background-color: #a100b6;"></div>
+                    <div class="select-color" (click)="selectColor('#007500')" style="background-color: #007500;"></div>
+                    <div class="select-color" (click)="selectColor('#ffffff')" style="background-color: #ffffff;"></div>
+                    <div class="select-color" (click)="selectColor('#cc740f')" style="background-color: #cc740f;"></div>
+                </div>
+                <div class="add-entry">
+                    <input type="text" [(ngModel)]="entryName" placeholder="Oyuncu adı">
+                    <input type="number" [(ngModel)]="entryScore" placeholder="Skor" min="0">
+                    <input type="color" [(ngModel)]="entryColor">
+                    <button class="increment" (click)="addLeaderboardEntry()">Ekle</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 20px;">
+        <button class="reset" (click)="resetAll()">TÜM VERİLERİ SIFIRLA</button>
+    </div>
+</div>
+
+<div id="status" class="status" [classList]="status()">{{status()}}</div>

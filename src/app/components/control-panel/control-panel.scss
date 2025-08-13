@@ -1,0 +1,242 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a;
+    color: white;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.control-panel {
+    background-color: #2d2d2d;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.tab-container {
+    margin-top: 20px;
+}
+
+.tab-buttons {
+    display: flex;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    background-color: #1a1a1a;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px 5px 0 0;
+    margin-right: 5px;
+}
+
+.tab-button.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #101010;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.team-control {
+    background-color: #4a4a4a;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.team-name {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.score-display {
+    font-size: 3em;
+    text-align: center;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.team-a .score-display {
+    color: #2196F3;
+}
+
+.team-b .score-display {
+    color: #FF5722;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+input {
+    background-color: #242424;
+}
+.increment {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.decrement {
+    background-color: #f44336;
+    color: white;
+}
+
+.reset {
+    background-color: #FF9800;
+    color: white;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.counter-control {
+    text-align: center;
+    padding: 20px;
+}
+
+.counter-value {
+    font-size: 4em;
+    font-weight: bold;
+    color: #4CAF50;
+    margin: 20px 0;
+}
+
+.leaderboard-control {
+    padding: 20px;
+}
+#leaderboard-entries {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.leaderboard-entry {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #202020;
+    border-radius: 5px;
+}
+
+.leaderboard-entry input {
+    flex: 1;
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.leaderboard-entry button {
+    padding: 8px 12px;
+    font-size: 0.9em;
+}
+
+.add-entry {
+    display: flex;
+    margin-top: 20px;
+}
+
+.add-entry input {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #ffffff;
+}
+
+.status {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.connected {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.disconnected {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+#new-entry-color {
+    padding: 3px;
+    margin: 0.4rem;
+}
+.colors {
+    display: flex;
+    justify-content: space-evenly;
+}
+.select-color {
+    border-radius: 5px;
+    width: 64px;
+    height: 64px;
+    border: 1px solid #333;
+}
+.select-color:hover {
+    box-shadow: 2px 3px 13px 2px #616161;
+}
+#counter-name {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+input[type="color"] {
+    width: 32px;
+    max-width: 64px;
+    height: 64px;
+    max-height: 64px;
+}
+input {
+    flex: 1;
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #ffffff;
+}

@@ -1,0 +1,15 @@
+<div class="container">
+    <!-- Lider Tablosu -->
+    <div id="leaderboard-view" class="leaderboard">
+        <div class="leaderboard-title">LİDER TABLOSU</div>
+        <div id="leaderboard-entries">
+            @for (entry of scoreData().Leaderboard | leaderboardSort; track entry.Id) {
+            <div class="leaderboard-entry" >
+                <div class="leaderboard-rank">#{{entry.rank}}</div>
+                <div class="leaderboard-name" [style.color]="entry.Color">{{entry.Name}}</div>
+                <div class="leaderboard-score">{{entry.Score}}</div>
+            </div>
+            }
+        </div>
+    </div>
+</div>
